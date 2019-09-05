@@ -46,3 +46,8 @@ ALTER TABLE `c_cuentas_bancarias`
 
 SET FOREIGN_KEY_CHECKS=1 
 ;
+
+	CREATE VIEW obtenerCuentas AS
+SELECT cuenta.*, banco.nombre_corto 
+FROM c_cuentas_bancarias cuenta 
+INNER JOIN c_bancos banco ON banco.id = cuenta.id_banco
